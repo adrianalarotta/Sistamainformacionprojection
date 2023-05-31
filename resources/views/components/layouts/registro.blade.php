@@ -260,7 +260,7 @@ function mostrarRazonSocial() {
       // Cancelar el envío del formulario por defecto
       event.preventDefault();
 
-      // Realizar todas las validaciones necesarias 
+      // Realizar todas las validaciones necesarias para hacer el registro 
       const tipoPersona = document.getElementById('tipopersona').value;
       const razonSocialInput = document.getElementById('razon');
       const nombreInput = document.getElementById('nombre');
