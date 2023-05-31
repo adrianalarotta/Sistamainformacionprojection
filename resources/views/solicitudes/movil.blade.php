@@ -10,7 +10,7 @@
       <div class="col-md-9 mr-auto" style="padding-left:8.5%">
         <span class="breadcrumb govco-icon govco-icon-shortr-arrow" style="height: 22px;"></span>
         <p class="ml-3 ml-md-0 text-miga" style="color: #004884; font-size:14px;">
-          <strong> 2. Ingrese Datos de la solicitud </strong>
+          <strong> 2. Datos de la solicitud </strong>
         </p>
       </div>
     </div>
