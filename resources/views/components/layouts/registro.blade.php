@@ -239,7 +239,7 @@ function mostrarRazonSocial() {
       input.parentNode.appendChild(errorDiv);
     }
 
-    function mostrarExito(input) {
+    function mostrarExito(input) {e
       input.classList.remove('is-invalid');
       input.classList.add('is-valid');
       const errorDiv = input.parentNode.querySelector('.invalid-feedback');
@@ -249,88 +249,6 @@ function mostrarRazonSocial() {
     }
   });
 </script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', (e) => {
-    // Obtener referencia al formulario
-    const formulario = document.getElementById('mi-formulario');
-
-    // Agregar evento de envío del formulario
-    formulario.addEventListener('submit', (event) => {
-      // Cancelar el envío del formulario por defecto
-      event.preventDefault();
-
-      // Realizar todas las validaciones necesarias para hacer el registro 
-      const tipoPersona = document.getElementById('tipopersona').value;
-      const razonSocialInput = document.getElementById('razon');
-      const nombreInput = document.getElementById('nombre');
-      const apellidoInput = document.getElementById('apellido');
-      const tipoDocumento = document.getElementById('tipodocumento').value;
-      const documentoInput = document.getElementById('documento');
-      const telefonoInput = document.getElementById('telefono');
-      const correoInput = document.getElementById('correo');
-      const direccionInput = document.getElementById('direccion');
-
-      // Validar campos requeridos
-      let isValid = true;
-      if (tipoPersona === 'juridica' && razonSocialInput.value.trim() === '') {
-        mostrarError(razonSocialInput, 'Ingrese la razón social');
-        isValid = false;
-      }
-      if (nombreInput.value.trim() === '') {
-        mostrarError(nombreInput, 'Ingrese su nombre');
-        isValid = false;
-      }
-      if (apellidoInput.value.trim() === '') {
-        mostrarError(apellidoInput, 'Ingrese su apellido');
-        isValid = false;
-      }
-      if (tipoDocumento === '') {
-        mostrarError(tipoDocumento, 'Seleccione el tipo de documento');
-        isValid = false;
-      }
-      if (documentoInput.value.trim() === '') {
-        mostrarError(documentoInput, 'Ingrese el número de documento');
-        isValid = false;
-      }
-      if (telefonoInput.value.trim() === '') {
-        mostrarError(telefonoInput, 'Ingrese su número de teléfono');
-        isValid = false;
-      }
-      if (correoInput.value.trim() === '') {
-        mostrarError(correoInput, 'Ingrese su correo electrónico');
-        isValid = false;
-      }
-      if (direccionInput.value.trim() === '') {
-        mostrarError(direccionInput, 'Ingrese su dirección');
-        isValid = false;
-      }
-
-      if (isValid) {
-        // Enviar el formulario si todas las validaciones son exitosas
-        formulario.submit();
-      }
-    });
-
-    // Funciones auxiliares para mostrar/ocultar mensajes de error
-    function mostrarError(input, mensaje) {
-      input.classList.add('is-invalid');
-      input.classList.remove('is-valid');
-      const errorDiv = document.createElement('div');
-      errorDiv.classList.add('invalid-feedback');
-      errorDiv.innerText = mensaje;
-      input.parentNode.appendChild(errorDiv);
-    }
-
-    function mostrarExito(input) {
-      input.classList.remove('is-invalid');
-      input.classList.add('is-valid');
-      const errorDiv = input.parentNode.querySelector('.invalid-feedback');
-      if (errorDiv) {
-        errorDiv.remove();
-      }
-    }
-  });
 </script>
 
 

@@ -68,48 +68,54 @@
       </div>
 
       <div class="col-sm-2" style="padding-left:1%;">
-        <div class="entradas-de-texto-govco">
-          <label for="razon-social-id">Medidas(mts^2):<br>
-            Lateral izquierdo*</label>
-          <input class=form-control type="string" name="Lateral_izquierdo" id="Lateral_izquierdo" placeholder="Ejemplo: Campo de texto" />
-        </div>
-      </div>
+  <div class="entradas-de-texto-govco">
+    <label for="razon-social-id">Medidas(mts^2):<br>
+      Lateral izquierdo*</label>
+    <input class="form-control" type="number" name="Lateral_izquierdo" id="Lateral_izquierdo" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal()" />
+  </div>
+</div>
 
-      <div class="col-sm-1" style="padding-left:1%;">
-        <div class="entradas-de-texto-govco">
-          <label for="razon-social-id">Lateral derecho*</label>
-          <input class=form-control type="string" id="Lateral_derecho" name="Lateral_derecho" placeholder="Ejemplo: Campo de texto" />
-        </div>
-      </div>
+<div class="col-sm-1" style="padding-left:1%;">
+  <div class="entradas-de-texto-govco">
+    <label for="razon-social-id">Lateral derecho*</label>
+    <input class="form-control" type="number" id="Lateral_derecho" name="Lateral_derecho" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal()" />
+  </div>
+</div>
 
-      <div class="col-sm-1" style="padding-left:1%;">
-        <div class="entradas-de-texto-govco">
-          <label for="razon-social-id"><br>Posterior*</label>
-          <input class=form-control type="string" id="Posterior" name="Posterior" placeholder="Ejemplo: Campo de texto" />
-        </div>
-      </div>
+<div class="col-sm-1" style="padding-left:1%;">
+  <div class="entradas-de-texto-govco">
+    <label for="razon-social-id"><br>Posterior*</label>
+    <input class="form-control" type="number" id="Posterior" name="Posterior" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal()" />
+  </div>
+</div>
 
-      <script>
-        // Obtener los valores de las medidas ingresadas por el usuario
-        var lateralIzquierdo = parseFloat(document.getElementById("Lateral_izquierdo").value);
-        var lateralDerecho = parseFloat(document.getElementById("Lateral_derecho").value);
-        var posterior = parseFloat(document.getElementById("Posterior").value);
+<div class="col-sm-2" style="padding-left:1%; padding-top:1.2%;">
+  <div class="entradas-de-texto-govco">
+    <label for="Area_Total">Área Total:</label>
+    <input class="form-control" type="text" id="Area_Total" name="Area_Total" readonly />
+  </div>
+</div>
 
-        // Calcular el área total
-        var areaTotal = lateralIzquierdo + lateralDerecho + posterior;
+<script>
+  function calcularAreaTotal() {
+    // Obtener los valores de las medidas ingresadas por el usuario
+    var lateralIzquierdo = parseFloat(document.getElementById("Lateral_izquierdo").value);
+    var lateralDerecho = parseFloat(document.getElementById("Lateral_derecho").value);
+    var posterior = parseFloat(document.getElementById("Posterior").value);
 
-        // Asignar el resultado al campo de texto del área total
-        document.getElementById("Area_Total").value = areaTotal;
-      </script>
+    // Verificar si los valores son números válidos
+    if (isNaN(lateralIzquierdo) || isNaN(lateralDerecho) || isNaN(posterior)) {
+      // Al menos uno de los valores no es un número válido
+      document.getElementById("Area_Total").value = "Valores inválidos";
+    } else {
+      // Calcular el área total
+      var areaTotal = lateralIzquierdo + lateralDerecho + posterior;
 
-      <div class="col-sm-1" style="padding-left:1%;">
-        <div class="entradas-de-texto-govco">
-          <label for="razon-social-id"><br>Area Total*</label>
-          <input class=form-control type="string" id="Area_Total" name="Area_Total" placeholder="Ejemplo: Campo de texto" />
-        </div>
-      </div>
-    </div>
-
+      // Asignar el resultado al campo de texto del área total
+      document.getElementById("Area_Total").value = areaTotal;
+    }
+  }
+</script>
 
 
     <div class="image-icon">
