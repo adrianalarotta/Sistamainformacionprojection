@@ -95,33 +95,38 @@
 
   </div>
 
-
-  <div class="row" style="padding-left:9.5% ;">
-
-
-    <div class="col-sm-2" >
+  <div class="row" style="padding-left:9.5%;">
+    <div class="col-sm-2">
         <div class="entradas-de-texto-govco">
-
-          <label for="razon-social-id">Ancho(m)*</label>
-          <input class=form-control type="string" name="Ancho" id="Ancho" placeholder="Ejemplo: Campo de texto"/>
+            <label for="razon-social-id">Ancho(m)*</label>
+            <input class="form-control" type="number" name="Ancho" id="Ancho" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_Total', 'Ancho', 'Alto')" />
         </div>
-      </div>
+    </div>
 
-      <div class="col-sm-2" style="padding-left:1%;">
+    <div class="col-sm-2" style="padding-left:1%;">
         <div class="entradas-de-texto-govco">
-          <label for="razon-social-id">Alto(m)*</label>
-          <input type="string" name="Alto" id="Alto" placeholder="Ejemplo: Campo de texto"/>
+            <label for="razon-social-id">Alto(m)*</label>
+            <input type="number" name="Alto" id="Alto" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_Total', 'Ancho', 'Alto')" />
         </div>
-      </div>
+    </div>
 
-      <div class="col-sm-2" style="padding-left:1%;">
+    <div class="col-sm-2" style="padding-left:1%;">
         <div class="entradas-de-texto-govco">
-          <label for="razon-social-id">Area total(mts^2):
-           </label>
-          <input class=form-control type="string" name="Area_Total" id="razon-social-id" placeholder="Ejemplo: Campo de texto"/>
+            <label for="razon-social-id">Area total(mts^2):</label>
+            <input class="form-control" type="text" name="Area_Total" id="Area_Total" placeholder="Ejemplo: Campo de texto" readonly />
         </div>
-      </div>
-  </div>
+    </div>
+</div>
+
+<script>
+    function calcularAreaTotal(areaId, anchoId, altoId) {
+        const ancho = parseFloat(document.getElementById(anchoId).value);
+        const alto = parseFloat(document.getElementById(altoId).value);
+        const areaTotal = ancho * alto;
+        document.getElementById(areaId).value = areaTotal.toFixed(2);
+    }
+</script>
+
 
   <div class="image-icon">
     <div class="col-md-9 mr-auto" style="padding-left:8.5%">

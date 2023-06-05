@@ -69,58 +69,71 @@
 
 
   <div class="row" style="padding-left:10% ;">
-
-
-    <div class="col-sm-2" >
-        <div class="entradas-de-texto-govco">
-
-          <label for="razon-social-id">Ancho(m)*</label>
-          <input class=form-control type="string" name="Ancho" placeholder="Ejemplo: Campo de texto"/>
-        </div>
-      </div>
-
-      <div class="col-sm-2" style="padding-left:1%;">
-        <div class="entradas-de-texto-govco">
-          <label for="razon-social-id">Alto(m)*</label>
-          <input type="string" name="Alto" placeholder="Ejemplo: Campo de texto"/>
-        </div>
-      </div>
-
-      <div class="col-sm-2" style="padding-left:1%;">
-        <div class="entradas-de-texto-govco">
-          <label for="razon-social-id">Area total(mts^2):
-           </label>
-          <input class=form-control type="string" name="Area_total" placeholder="Ejemplo: Campo de texto"/>
-        </div>
-      </div>
+  <div class="col-sm-2">
+    <div class="entradas-de-texto-govco">
+      <label for="razon-social-id">Ancho(m)*</label>
+      <input class="form-control" type="number" name="Ancho" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_total', 'Ancho', 'Alto')" />
+    </div>
   </div>
 
-  <div class="row" style="padding-left:10% ;">
-
-
-    <div class="col-sm-2" >
-        <div class="entradas-de-texto-govco">
-
-          <label for="razon-social-id"><br>Ancho fachada(m)*</label>
-          <input class=form-control type="string" name="Ancho_fachada" placeholder="Ejemplo: Campo de texto"/>
-        </div>
-      </div>
-
-      <div class="col-sm-2" style="padding-left:1%;">
-        <div class="entradas-de-texto-govco">
-          <label for="razon-social-id"><br>Alto fachada(m)*</label>
-          <input type="string" name="Alto_fachada" placeholder="Ejemplo: Campo de texto"/>
-        </div>
-      </div>
-
-      <div class="col-sm-2" style="padding-left:1%;">
-        <div class="entradas-de-texto-govco">
-          <label for="razon-social-id">Area total fachada(mts^2):
-           </label>
-          <input class=form-control type="string" name="Area_Total_fachada" placeholder="Ejemplo: Campo de texto"/>
-        </div>
-      </div>
+  <div class="col-sm-2" style="padding-left:1%;">
+    <div class="entradas-de-texto-govco">
+      <label for="razon-social-id">Alto(m)*</label>
+      <input class="form-control" type="number" name="Alto" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_total', 'Ancho', 'Alto')" />
+    </div>
   </div>
+
+  <div class="col-sm-2" style="padding-left:1%;">
+    <div class="entradas-de-texto-govco">
+      <label for="razon-social-id">Área total(mts^2):</label>
+      <input class="form-control" type="text" name="Area_total" placeholder="Ejemplo: Campo de texto" readonly />
+    </div>
+  </div>
+</div>
+
+<div class="row" style="padding-left:10% ;">
+  <div class="col-sm-2">
+    <div class="entradas-de-texto-govco">
+      <label for="razon-social-id"><br>Ancho fachada(m)*</label>
+      <input class="form-control" type="number" name="Ancho_fachada" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_Total_fachada', 'Ancho_fachada', 'Alto_fachada')" />
+    </div>
+  </div>
+
+  <div class="col-sm-2" style="padding-left:1%;">
+    <div class="entradas-de-texto-govco">
+      <label for="razon-social-id"><br>Alto fachada(m)*</label>
+      <input class="form-control" type="number" name="Alto_fachada" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_Total_fachada', 'Ancho_fachada', 'Alto_fachada')" />
+    </div>
+  </div>
+
+  <div class="col-sm-2" style="padding-left:1%;">
+    <div class="entradas-de-texto-govco">
+      <label for="razon-social-id">Área total fachada(mts^2):</label>
+      <input class="form-control" type="text" name="Area_Total_fachada" placeholder="Ejemplo: Campo de texto" readonly />
+    </div>
+  </div>
+</div>
+
+<script>
+  function calcularAreaTotal(areaId, anchoId, altoId) {
+    // Obtener los valores ingresados por el usuario
+    var ancho = parseFloat(document.getElementsByName(anchoId)[0].value);
+    var alto = parseFloat(document.getElementsByName(altoId)[0].value);
+
+    // Verificar si los valores son números válidos
+    if (isNaN(ancho) || isNaN(alto)) {
+      // Al menos uno de los valores no es un número válido
+      document.getElementsByName(areaId)[0].value = "Valores inválidos";
+    } else {
+      // Calcular el área total
+      var areaTotal = ancho * alto;
+
+      // Asignar el resultado al campo de texto del área total
+      document.getElementsByName(areaId)[0].value = areaTotal;
+    }
+  }
+</script>
+
 
   <div class="image-icon">
     <div class="col-md-9 mr-auto" style="padding-left:8.5%">

@@ -68,42 +68,58 @@
 
 
   <div class="row" style="padding-left:9.5% ;">
+  <div class="col-sm-2" style=" padding-top: 0.8%">
+    <label for="" class="">Número de caras<span aria-required="true">*</span></label>
+    <select class="form-control" id="Numero_de_caras" name="Numero_de_caras" onchange="calcularAreaTotal()">
+      <option disabled selected>Seleccione</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+  </div>
 
-    <div class="col-sm-2" style=" padding-top: 0.8%" >
-        <label for="" class="">Número de caras<span aria-required="true">*</span></label>
-        <select class="form-control" id="Numero_de_caras" name="Numero_de_caras" onchange="()">
-          <option disabled selected>Seleccione</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-        </select>
-      </div>
-
-
-    <div class="col-sm-2" >
-      <div class="entradas-de-texto-govco">
-
-        <label for="razon-social-id">Ancho(m)*</label>
-        <input class=form-control type="string" id="Ancho" name="Ancho" placeholder="Ejemplo: Campo de texto"/>
-      </div>
-    </div>
-
-    <div class="col-sm-2" style="padding-left:1%;">
-      <div class="entradas-de-texto-govco">
-        <label for="razon-social-id">Alto(m)*</label>
-        <input type="string" id="Alto" name="Alto" placeholder="Ejemplo: Campo de texto"/>
-      </div>
-    </div>
-
-    <div class="col-sm-2" style="padding-left:1%;">
-      <div class="entradas-de-texto-govco">
-        <label for="razon-social-id">Area total(mts^2):
-         </label>
-        <input class=form-control type="string" id="Area_total" name="Area_total" placeholder="Ejemplo: Campo de texto"/>
-      </div>
+  <div class="col-sm-2">
+    <div class="entradas-de-texto-govco">
+      <label for="razon-social-id">Ancho(m)*</label>
+      <input class="form-control" type="number" id="Ancho" name="Ancho" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal()" />
     </div>
   </div>
-<div>
+
+  <div class="col-sm-2" style="padding-left:1%;">
+    <div class="entradas-de-texto-govco">
+      <label for="razon-social-id">Alto(m)*</label>
+      <input class="form-control" type="number" id="Alto" name="Alto" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal()" />
+    </div>
+  </div>
+
+  <div class="col-sm-2" style="padding-left:1%;">
+    <div class="entradas-de-texto-govco">
+      <label for="razon-social-id">Área total(mts^2):</label>
+      <input class="form-control" type="text" id="Area_total" name="Area_total" placeholder="Ejemplo: Campo de texto" readonly />
+    </div>
+  </div>
 </div>
+
+<script>
+  function calcularAreaTotal() {
+    // Obtener los valores ingresados por el usuario
+    var ancho = parseFloat(document.getElementById("Ancho").value);
+    var alto = parseFloat(document.getElementById("Alto").value);
+    var numeroDeCaras = parseInt(document.getElementById("Numero_de_caras").value);
+
+    // Verificar si los valores son números válidos
+    if (isNaN(ancho) || isNaN(alto)) {
+      // Al menos uno de los valores no es un número válido
+      document.getElementById("Area_total").value = "Valores inválidos";
+    } else {
+      // Calcular el área total según el número de caras seleccionado
+      var areaTotal = ancho * alto * numeroDeCaras;
+
+      // Asignar el resultado al campo de texto del área total
+      document.getElementById("Area_total").value = areaTotal;
+    }
+  }
+</script>
+
 
 
   <div class="image-icon">

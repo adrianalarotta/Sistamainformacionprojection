@@ -1,7 +1,7 @@
 <x-layouts.app>
 
 
-  <form name="mi-formulario" action="{{route('solicitudes.store')}}" enctype="multipart/form-data" method="POST">
+  <form name="mi-formulario" action="{{route('solicitudes.store')}}" enctype="multipart/form-data" method="POST" onsubmit="return validarFormulario()">
     @csrf
     <x-layouts.registro>
     </x-layouts.registro>
@@ -320,6 +320,7 @@
         </div>
       </div>
     </div>
+
     <x-layouts.capcha>
     </x-layouts.capcha>
     <div class="row" style="padding-left:11%; padding-top:1%">
@@ -341,6 +342,7 @@
         document.getElementById("resolucionanterior1").style.display = "none";
       }
     }
+    
   </script>
 
 

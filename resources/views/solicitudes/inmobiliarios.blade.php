@@ -75,202 +75,186 @@
 </div>
 
 
-  <div class="row" style="padding-left:10% ;">
-
-
-    <div class="col-sm-2" >
-        <div class="entradas-de-texto-govco">
-
-          <label for="razon-social-id"> Largo(m)*</label>
-          <input class=form-control type="string" name="Largo_predio" placeholder="Ejemplo: Campo de texto"/>
-        </div>
-      </div>
-
-      <div class="col-sm-2" style="padding-left:1%;">
-        <div class="entradas-de-texto-govco">
-          <label for="razon-social-id">Ancho(m)*</label>
-          <input type="string" name="Ancho_predio" placeholder="Ejemplo: Campo de texto"/>
-        </div>
-      </div>
-
-      <div class="col-sm-2" style="padding-left:1%;">
-        <div class="entradas-de-texto-govco">
-          <label for="razon-social-id">Area total(mts^2):
-           </label>
-          <input class=form-control type="string" name="Area_total_predio" placeholder="Ejemplo: Campo de texto"/>
-        </div>
-      </div>
+<div class="row" style="padding-left:10% ;">
+  <div class="col-sm-2">
+    <div class="entradas-de-texto-govco">
+      <label for="razon-social-id">Largo(m)*</label>
+      <input class="form-control" type="number" name="Largo_predio" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_total_predio', 'Largo_predio', 'Ancho_predio')" />
+    </div>
   </div>
 
-  <div class="row" style="padding-left:9.5% ;">
-    <div class="checkbox-seleccion-govco m-2">
-        <input id="opt1" name="opt1" type="checkbox"/>
-        <label for="opt1">Vallas proyectos inmobiliarios</label>
-      </div>
-      <div class="row" style="padding-left:2% ;">
-        <div class="col-sm-2" style="padding-left:1%;" id="numvehiculos">
-            <div class="entradas-de-texto-govco">
-              <label for="razon-social-id">Numero de elementos*</label>
-              <input class=form-control type="number" name="numero_de_elemento_valla" placeholder="Ejemplo: Campo de texto"/>
-            </div>
-          </div>
-
-        <div class="col-sm-2" >
-            <div class="entradas-de-texto-govco">
-
-              <label for="razon-social-id"> Alto(m)*</label>
-              <input class=form-control type="string" name="Alto_valla" placeholder="Ejemplo: Campo de texto"/>
-            </div>
-          </div>
-
-          <div class="col-sm-2" style="padding-left:1%;">
-            <div class="entradas-de-texto-govco">
-              <label for="razon-social-id">Ancho(m)*</label>
-              <input type="string" id="razon-social-id" name="Ancho_valla" placeholder="Ejemplo: Campo de texto"/>
-            </div>
-          </div>
-
-          <div class="col-sm-2" style="padding-left:1%;">
-            <div class="entradas-de-texto-govco">
-              <label for="razon-social-id">Area total(mts^2):
-               </label>
-              <input class=form-control type="string" name="Area_total_valla" placeholder="Ejemplo: Campo de texto"/>
-            </div>
-          </div>
-      </div>
-
-
-  </div>
-  <div class="row" style="padding-left:9.5% ;">
-    <div class="checkbox-seleccion-govco m-2">
-        <input id="opt2" name="opt2" type="checkbox"/>
-        <label for="opt2">Avisos de identificación  proyectos inmobiliarios</label>
-      </div>
-      <div class="row" style="padding-left:2% ;">
-
-        <div class="col-sm-2" style="padding-left:1%;" id="numvehiculos">
-            <div class="entradas-de-texto-govco">
-              <label for="razon-social-id">Numero de elementos*</label>
-              <input class=form-control type="number" name="numero_de_elementos_aviso" placeholder="Ejemplo: Campo de texto"/>
-            </div>
-          </div>
-
-
-        <div class="col-sm-2" >
-            <div class="entradas-de-texto-govco">
-
-              <label for="razon-social-id"> Alto(m)*</label>
-              <input class=form-control type="string" name="Alto_aviso" placeholder="Ejemplo: Campo de texto"/>
-            </div>
-          </div>
-
-          <div class="col-sm-2" style="padding-left:1%;">
-            <div class="entradas-de-texto-govco">
-              <label for="razon-social-id">Ancho(m)*</label>
-              <input type="string" id="razon-social-id" name="Ancho_aviso" placeholder="Ejemplo: Campo de texto"/>
-            </div>
-          </div>
-
-          <div class="col-sm-2" style="padding-left:1%;">
-            <div class="entradas-de-texto-govco">
-              <label for="razon-social-id">Area total(mts^2):
-               </label>
-              <input class=form-control type="string" name="Area_Total_aviso" placeholder="Ejemplo: Campo de texto"/>
-            </div>
-          </div>
-      </div>
-
-
-  </div>
-  <div class="row" style="padding-left:9.5% ;">
-    <div class="checkbox-seleccion-govco m-2">
-        <input id="opt3" name="opt3" type="checkbox"/>
-        <label for="opt3">Publicidad en encerramiento de proyectos inmobiliarios</label>
-      </div>
-      <div class="row" style="padding-left:2% ;">
-
-        <div class="col-sm-2" style="padding-left:1%;" id="numvehiculos">
-            <div class="entradas-de-texto-govco">
-              <label for="razon-social-id">Numero de elementos*</label>
-              <input class=form-control type="number" name="numero_de_encerramiento" placeholder="Ejemplo: Campo de texto"/>
-            </div>
-          </div>
-        <div class="col-sm-2" >
-            <div class="entradas-de-texto-govco">
-
-              <label for="razon-social-id"> Alto(m)*</label>
-              <input class=form-control type="string" name="Alto_encerramiento" placeholder="Ejemplo: Campo de texto"/>
-            </div>
-          </div>
-
-          <div class="col-sm-2" style="padding-left:1%;">
-            <div class="entradas-de-texto-govco">
-              <label for="razon-social-id">Ancho(m)*</label>
-              <input type="string" name="Ancho_encerramiento" placeholder="Ejemplo: Campo de texto"/>
-            </div>
-          </div>
-
-          <div class="col-sm-2" style="padding-left:1%;">
-            <div class="entradas-de-texto-govco">
-              <label for="razon-social-id">Area total(mts^2):
-               </label>
-              <input class=form-control type="string" name="Area_Total_encerramiento" placeholder="Ejemplo: Campo de texto"/>
-            </div>
-          </div>
-      </div>
-
-
+  <div class="col-sm-2" style="padding-left:1%;">
+    <div class="entradas-de-texto-govco">
+      <label for="razon-social-id">Ancho(m)*</label>
+      <input class="form-control" type="number" name="Ancho_predio" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_total_predio', 'Largo_predio', 'Ancho_predio')" />
+    </div>
   </div>
 
+  <div class="col-sm-2" style="padding-left:1%;">
+    <div class="entradas-de-texto-govco">
+      <label for="razon-social-id">Área total(mts^2):</label>
+      <input class="form-control" type="text" name="Area_total_predio" placeholder="Ejemplo: Campo de texto" readonly />
+    </div>
+  </div>
 </div>
+
 <div class="row" style="padding-left:9.5% ;">
   <div class="checkbox-seleccion-govco m-2">
-      <input id="opt4" name="opt4" type="checkbox"/>
-      <label for="opt4">Otros</label>
-    </div>
-    <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg col-xl" style="padding-left:2%">
-          <div class="entradas-de-texto-govco">
-            <label for="telefono-id">Cuales: </label>
-            <input type="text" name="otro" placeholder="Ejemplo: Campo de texto"/>
-          </div>
-        </div>
-    </div>
-    <div class="row" style="padding-left:2% ;">
-        <div class="col-sm-2" style="padding-left:1%;" id="numvehiculos">
-            <div class="entradas-de-texto-govco">
-              <label for="razon-social-id">Numero de elementos*</label>
-              <input class=form-control type="number" name="numero_de_elementos_otro" placeholder="Ejemplo: Campo de texto"/>
-            </div>
-          </div>
-
-      <div class="col-sm-2" >
-          <div class="entradas-de-texto-govco">
-
-            <label for="razon-social-id"> Largo(m)*</label>
-            <input class=form-control type="string" name="Largo_otro" placeholder="Ejemplo: Campo de texto"/>
-          </div>
-        </div>
-
-        <div class="col-sm-2" style="padding-left:1%;">
-          <div class="entradas-de-texto-govco">
-            <label for="razon-social-id">Ancho(m)*</label>
-            <input type="string"name="Ancho_otro" placeholder="Ejemplo: Campo de texto"/>
-          </div>
-        </div>
-
-        <div class="col-sm-2" style="padding-left:1%;">
-          <div class="entradas-de-texto-govco">
-            <label for="razon-social-id">Area total(mts^2):
-             </label>
-            <input class=form-control type="string" name="Area_Total_otro" placeholder="Ejemplo: Campo de texto"/>
-          </div>
-        </div>
+    <input id="opt1" name="opt1" type="checkbox" />
+    <label for="opt1">Vallas proyectos inmobiliarios</label>
+  </div>
+  <div class="row" style="padding-left:2% ;">
+    <div class="col-sm-2" style="padding-left:1%;">
+      <div class="entradas-de-texto-govco">
+        <label for="razon-social-id">Número de elementos*</label>
+        <input class="form-control" type="number" name="numero_de_elemento_valla" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_total_valla', 'Ancho_valla', 'Alto_valla')" />
+      </div>
     </div>
 
+    <div class="col-sm-2">
+      <div class="entradas-de-texto-govco">
+        <label for="razon-social-id">Alto(m)*</label>
+        <input class="form-control" type="number" name="Alto_valla" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_total_valla', 'Ancho_valla', 'Alto_valla')" />
+      </div>
+    </div>
 
+    <div class="col-sm-2" style="padding-left:1%;">
+      <div class="entradas-de-texto-govco">
+        <label for="razon-social-id">Ancho(m)*</label>
+        <input type="number" class="form-control" id="razon-social-id" name="Ancho_valla" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_total_valla', 'Ancho_valla', 'Alto_valla')" />
+      </div>
+    </div>
+
+    <div class="col-sm-2" style="padding-left:1%;">
+      <div class="entradas-de-texto-govco">
+        <label for="razon-social-id">Área total(mts^2):</label>
+        <input class="form-control" type="text" name="Area_total_valla" placeholder="Ejemplo: Campo de texto" readonly />
+      </div>
+    </div>
+  </div>
 </div>
 
+<div class="row" style="padding-left:9.5% ;">
+  <div class="checkbox-seleccion-govco m-2">
+    <input id="opt2" name="opt2" type="checkbox" />
+    <label for="opt2">Avisos de identificación proyectos inmobiliarios</label>
+  </div>
+  <div class="row" style="padding-left:2% ;">
+    <div class="col-sm-2" style="padding-left:1%;">
+      <div class="entradas-de-texto-govco">
+        <label for="razon-social-id">Número de elementos*</label>
+        <input class="form-control" type="number" name="numero_de_elementos_aviso" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_Total_aviso', 'Ancho_aviso', 'Alto_aviso')" />
+      </div>
+    </div>
+
+    <div class="col-sm-2">
+      <div class="entradas-de-texto-govco">
+        <label for="razon-social-id">Alto(m)*</label>
+        <input class="form-control" type="number" name="Alto_aviso" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_Total_aviso', 'Ancho_aviso', 'Alto_aviso')" />
+      </div>
+    </div>
+
+    <div class="col-sm-2" style="padding-left:1%;">
+      <div class="entradas-de-texto-govco">
+        <label for="razon-social-id">Ancho(m)*</label>
+        <input type="number" class="form-control" id="razon-social-id" name="Ancho_aviso" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_Total_aviso', 'Ancho_aviso', 'Alto_aviso')" />
+      </div>
+    </div>
+
+    <div class="col-sm-2" style="padding-left:1%;">
+      <div class="entradas-de-texto-govco">
+        <label for="razon-social-id">Área total(mts^2):</label>
+        <input class="form-control" type="text" name="Area_Total_aviso" placeholder="Ejemplo: Campo de texto" readonly />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" style="padding-left:9.5% ;">
+  <div class="checkbox-seleccion-govco m-2">
+    <input id="opt3" name="opt3" type="checkbox" />
+    <label for="opt3">Publicidad en encerramiento de proyectos inmobiliarios</label>
+  </div>
+  <div class="row" style="padding-left:2% ;">
+    <div class="col-sm-2" style="padding-left:1%;">
+      <div class="entradas-de-texto-govco">
+        <label for="razon-social-id">Número de elementos*</label>
+        <input class="form-control" type="number" name="numero_de_encerramiento" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_Total_encerramiento', 'Ancho_encerramiento', 'Alto_encerramiento')" />
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="entradas-de-texto-govco">
+        <label for="razon-social-id">Alto(m)*</label>
+        <input class="form-control" type="number" name="Alto_encerramiento" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_Total_encerramiento', 'Ancho_encerramiento', 'Alto_encerramiento')" />
+      </div>
+    </div>
+    <div class="col-sm-2" style="padding-left:1%;">
+      <div class="entradas-de-texto-govco">
+        <label for="razon-social-id">Ancho(m)*</label>
+        <input type="number" class="form-control" name="Ancho_encerramiento" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_Total_encerramiento', 'Ancho_encerramiento', 'Alto_encerramiento')" />
+      </div>
+    </div>
+    <div class="col-sm-2" style="padding-left:1%;">
+      <div class="entradas-de-texto-govco">
+        <label for="razon-social-id">Área total(mts^2):</label>
+        <input class="form-control" type="text" name="Area_Total_encerramiento" placeholder="Ejemplo: Campo de texto" readonly />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" style="padding-left:9.5% ;">
+  <div class="checkbox-seleccion-govco m-2">
+    <input id="opt4" name="opt4" type="checkbox" />
+    <label for="opt4">Otros</label>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-lg col-xl" style="padding-left:2%">
+      <div class="entradas-de-texto-govco">
+        <label for="telefono-id">Cuales:</label>
+        <input type="text" name="otro" placeholder="Ejemplo: Campo de texto" />
+      </div>
+    </div>
+  </div>
+  <div class="row" style="padding-left:2% ;">
+    <div class="col-sm-2" style="padding-left:1%;" id="numvehiculos">
+      <div class="entradas-de-texto-govco">
+        <label for="razon-social-id">Número de elementos*</label>
+        <input class="form-control" type="number" name="numero_de_elementos_otro" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_Total_otro', 'Ancho_otro', 'Largo_otro')" />
+      </div>
+    </div>
+
+    <div class="col-sm-2">
+      <div class="entradas-de-texto-govco">
+        <label for="razon-social-id">Largo(m)*</label>
+        <input class="form-control" type="number" name="Largo_otro" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_Total_otro', 'Ancho_otro', 'Largo_otro')" />
+      </div>
+    </div>
+
+    <div class="col-sm-2" style="padding-left:1%;">
+      <div class="entradas-de-texto-govco">
+        <label for="razon-social-id">Ancho(m)*</label>
+        <input type="number" class="form-control" name="Ancho_otro" placeholder="Ejemplo: Campo de texto" oninput="calcularAreaTotal('Area_Total_otro', 'Ancho_otro', 'Largo_otro')" />
+      </div>
+    </div>
+
+    <div class="col-sm-2" style="padding-left:1%;">
+      <div class="entradas-de-texto-govco">
+        <label for="razon-social-id">Área total(mts^2):</label>
+        <input class="form-control" type="text" name="Area_Total_otro" placeholder="Ejemplo: Campo de texto" readonly />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function calcularAreaTotal(areaId, largoId, anchoId) {
+    const largo = parseFloat(document.getElementsByName(largoId)[0].value);
+    const ancho = parseFloat(document.getElementsByName(anchoId)[0].value);
+    const areaTotal = largo * ancho;
+    document.getElementsByName(areaId)[0].value = areaTotal.toFixed(2);
+  }
+</script>
 
   <div class="image-icon">
     <div class="col-md-9 mr-auto" style="padding-left:8.5%">
